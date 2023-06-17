@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="539.0" prefWidth="743.0" style="-fx-border-color: green;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Library.LibraryController">
+   <Pane fx:id="userPane" layoutX="13.0" layoutY="500.0" prefHeight="31.0" prefWidth="362.0">
+      <Button fx:id="loanBook" layoutX="6.0" layoutY="3.0" mnemonicParsing="false" onAction="#handleLoanBooks" text="Loan">
+         <font>
+            <Font name="JetBrains Mono Regular" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="getReceipt" layoutX="56.0" layoutY="3.0" mnemonicParsing="false" onAction="#handleConfirmLoan" text="Receipt">
+         <font>
+            <Font name="JetBrains Mono Regular" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="deliverBook" layoutX="129.0" layoutY="3.0" mnemonicParsing="false" onAction="#handleReturnBooks" text="Deliver">
+         <font>
+            <Font name="JetBrains Mono Regular" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="userExit" layoutX="202.0" layoutY="3.0" mnemonicParsing="false" onAction="#handleLogout" text="Exit user">
+         <font>
+            <Font name="JetBrains Mono Regular" size="13.0" />
+         </font>
+      </Button>
+   </Pane>
+   <Pane fx:id="chartPane" layoutX="7.0" layoutY="292.0" prefHeight="211.0" prefWidth="371.0" />
+    <Pane prefHeight="71.0" prefWidth="743.0" style="-fx-background-color: grey;">
+        <Label layoutX="326.0" layoutY="9.0" prefHeight="53.0" prefWidth="190.0" text="JAVABRARY">
+            <font>
+                <Font name="JetBrains Mono Bold" size="13.0" />
+            </font>
+        </Label>
+    </Pane>
+   <Pane fx:id="loginPane" layoutY="71.0" prefHeight="53.0" prefWidth="743.0" style="-fx-border-color: grey;">
+      <Label layoutX="7.0" layoutY="20.0" prefHeight="18.0" prefWidth="50.0" text="Phone:">
+         <font>
+            <Font name="JetBrains Mono Regular" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="phoneNumber" layoutX="57.0" layoutY="16.0" prefHeight="26.0" prefWidth="124.0" promptText="8-digit number" />
+      <Label layoutX="186.0" layoutY="20.0" text="Pin:">
+         <font>
+            <Font name="JetBrains Mono NL Regular" size="13.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="pinCode" layoutX="217.0" layoutY="16.0" prefHeight="26.0" prefWidth="75.0" promptText="4-digit" />
+      <Button fx:id="loginButton" layoutX="293.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="31.0" prefWidth="62.0" text="Login">
+         <font>
+            <Font name="JetBrains Mono Regular" size="13.0" />
+         </font>
+      </Button>
+      <Label layoutX="477.0" layoutY="22.0" text="Status:" />
+      <Label fx:id="statusLabel" layoutX="523.0" layoutY="21.0" prefHeight="18.0" prefWidth="220.0" />
+      <Button fx:id="adminButton" layoutX="355.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleActivateAdmin" prefHeight="31.0" prefWidth="62.0" text="Admin">
+         <font>
+            <Font name="JetBrains Mono Regular" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="newUser" layoutX="417.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleNewUser" prefHeight="31.0" prefWidth="49.0" text="New">
+         <font>
+            <Font name="JetBrains Mono Regular" size="13.0" />
+         </font>
+      </Button>
+   </Pane>
+   <Pane layoutX="386.0" layoutY="124.0" prefHeight="415.0" prefWidth="349.0">
+      <FlowPane fx:id="bookShelf" layoutX="6.0" layoutY="12.0" prefHeight="393.0" prefWidth="318.0">
+         <padding>
+            <Insets bottom="10.0" />
+         </padding>
+      </FlowPane>
+   </Pane>
+   <ListView fx:id="yourChart" layoutX="14.0" layoutY="283.0" onMousePressed="#handleEmptyBookChart" prefHeight="217.0" prefWidth="362.0" />
+   <Pane fx:id="adminPane" layoutX="1.0" layoutY="124.0" prefHeight="118.0" prefWidth="386.0">
+      <TextField fx:id="titleField" layoutX="14.0" layoutY="8.0" prefHeight="25.0" prefWidth="130.0" promptText="Title">
+         <font>
+            <Font name="JetBrains Mono Regular" size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="pagesField" layoutX="14.0" layoutY="39.0" prefHeight="25.0" prefWidth="130.0" promptText="Pages">
+         <font>
+            <Font name="JetBrains Mono Regular" size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="authorField" layoutX="144.0" layoutY="8.0" prefHeight="25.0" prefWidth="139.0" promptText="Author">
+         <font>
+            <Font name="JetBrains Mono Regular" size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="copiesField" layoutX="144.0" layoutY="39.0" prefHeight="25.0" prefWidth="139.0" promptText="Copies">
+         <font>
+            <Font name="JetBrains Mono Regular" size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="sizeField" layoutX="283.0" layoutY="8.0" prefHeight="25.0" prefWidth="81.0" promptText="Size MB">
+         <font>
+            <Font name="JetBrains Mono Regular" size="13.0" />
+         </font>
+      </TextField>
+      <Button fx:id="addButton" layoutX="7.0" layoutY="74.0" mnemonicParsing="false" onAction="#handleAddBookToLibrary" prefHeight="26.0" prefWidth="38.0" text="Add">
+         <font>
+            <Font name="JetBrains Mono Regular" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="restockButton" layoutX="113.0" layoutY="74.0" mnemonicParsing="false" onAction="#handleRestockLowStock" text="Restock">
+         <font>
+            <Font name="JetBrains Mono Regular" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="removeButton" layoutX="48.0" layoutY="74.0" mnemonicParsing="false" onAction="#handleRemoveLastBookFromLibrary" text="Remove">
+         <font>
+            <Font name="JetBrains Mono Regular" size="13.0" />
+         </font>
+      </Button>
+      <CheckBox fx:id="chooseBook" layoutX="307.0" layoutY="78.0" mnemonicParsing="false" onAction="#handleChooseTypeOfBook" text="Ebook?">
+         <font>
+            <Font name="JetBrains Mono Regular" size="13.0" />
+         </font>
+      </CheckBox>
+      <Button fx:id="exitButton" layoutX="186.0" layoutY="74.0" mnemonicParsing="false" onAction="#handleExitAdmin" text="Exit">
+         <font>
+            <Font name="JetBrains Mono Regular" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="userButton" layoutX="235.0" layoutY="74.0" mnemonicParsing="false" onAction="#handleListOfAllCustomers" text="Users">
+         <font>
+            <Font name="JetBrains Mono Regular" size="13.0" />
+         </font>
+      </Button>
+   </Pane>
+   <Pane layoutX="12.0" layoutY="245.0" prefHeight="47.0" prefWidth="362.0"> 
+      <Label layoutX="7.0" layoutY="15.0" prefWidth="130.0" text="Number of books:">
+         <font>
+            <Font name="JetBrains Mono Regular" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberOfBooks" layoutX="137.0" layoutY="16.0" />
+      <Label fx:id="priceBooks" layoutX="238.0" layoutY="17.0" />
+   </Pane>
+</Pane>

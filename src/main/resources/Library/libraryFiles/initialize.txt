@@ -1,0 +1,5 @@
+
+
+Empty file, to make sure the target directory is not emptied upon build when initializing the repository.
+Deleting this file while result in RunTimeException, because the targeted file cannot be found. 
+If this occurs, add a folder with the name "libraryFiles" in /target/Library/ to fix the issue.

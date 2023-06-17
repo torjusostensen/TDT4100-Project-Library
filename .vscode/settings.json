@@ -1,0 +1,28 @@
+{
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.debug.settings.forceBuildBeforeLaunch": false,
+    "java.debug.settings.console": "internalConsole",
+    "cSpell.words": [
+      "Hobb",
+      "JAVABRARY",
+      "Javafit",
+      "mailreg",
+      "newuser",
+      "passwordconfirmreg",
+      "passwordreg",
+      "txtpass",
+      "txtuname",
+      "userreg"
+    ],
+    "sqltools.connections": [
+      {
+        "previewLimit": 50,
+        "driver": "SQLite",
+        "name": "TDT4100",
+        "database": "/Users/torjus/Desktop/database/CustomersDB.db"
+      }
+    ],
+    "sqltools.useNodeRuntime": true,
+    "java.compile.nullAnalysis.mode": "automatic"
+  }
+  
